@@ -1,17 +1,19 @@
-import { StatItem } from "./StatItem";
-import { StatTitle } from "./StatTitle";
+import { StatItem } from './StatItem';
+import { StatTitle } from './StatTitle';
+import { StatSect, StatListEl, StatItemEl } from './Statistics.styled';
 
-export const Statistics = ({title, stats}) => {
-    return (
-        <section className="statistics">
-            <StatTitle title={title}/>
+export const Statistics = ({ title, stats }) => {
+  return (
+    <StatSect>
+      {title && <StatTitle title={title} />}
 
-            <ul className="stat-list">
-            {stats.map(stat => (
-                <li className="item" key={stat.id}>
-                    <StatItem stat={stat} />
-                </li>))}
-            </ul>
-        </section>
-    )
+      <StatListEl>
+        {stats.map(stat => (
+          <StatItemEl key={stat.id} perc={stat.percentage}>
+            <StatItem stat={stat} />
+          </StatItemEl>
+        ))}
+      </StatListEl>
+    </StatSect>
+  );
 };

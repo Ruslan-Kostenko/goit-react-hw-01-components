@@ -1,22 +1,24 @@
-import { TransactionOne } from "./TransactionOne"
+import { TableEl, ThEl } from './Transaction.styled';
+import { TransactionOne } from './TransactionOne';
 
-export const TransactionHistory = ({items}) => {
-    return (
-        <table className="transaction-history">
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>Amount</th>
-                    <th>Currency</th>
-                </tr>
-            </thead>
+export const TransactionHistory = ({ items }) => {
+  return (
+    <TableEl>
+      <thead>
+        <tr>
+          <ThEl>Type</ThEl>
+          <ThEl>Amount</ThEl>
+          <ThEl>Currency</ThEl>
+        </tr>
+      </thead>
 
-            <tbody>{items.map(item => (
-                <tr key={item.id}>
-                <TransactionOne item={item}/>
-                </tr>
-            ))}
-            </tbody>
-        </table>
-    )
-}
+      <tbody>
+        {items.map(item => (
+          <tr key={item.id}>
+            <TransactionOne item={item} />
+          </tr>
+        ))}
+      </tbody>
+    </TableEl>
+  );
+};

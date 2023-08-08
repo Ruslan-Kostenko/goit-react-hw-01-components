@@ -1,7 +1,7 @@
-export const StatTitle = ({title}) => {
-    return (
-        <>
-        <h2 className="title">{title}</h2>
-        </>
-    )
-}
+export const StatTitle = ({ title }) => {
+  return (
+    <>
+      <h2>{title}</h2>
+    </>
+  );
+};
